@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Register for an Event</h2>
+<form method="POST">
+    <input class="form-control" type="text" name="name" placeholder="Your Name" required><br>
+    <input class="form-control" type="email" name="email" placeholder="Your Email" required><br>
+    <select class="form-control" name="event" required>
+        {% for event in events %}
+        <option value="{{ event[0] }}">{{ event[1] }} - {{ event[2] }}</option>
+        {% endfor %}
+    </select><br>
+    <button class="btn btn-primary" type="submit">Register</button>
+</form>
+{% endblock %}

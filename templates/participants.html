@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Registered Participants</h2>
+<table class="table">
+    <thead>
+        <tr><th>Name</th><th>Email</th><th>Event</th></tr>
+    </thead>
+    <tbody>
+        {% for p in participants %}
+        <tr><td>{{ p[0] }}</td><td>{{ p[1] }}</td><td>{{ p[2] }}</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
